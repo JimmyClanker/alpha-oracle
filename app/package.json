@@ -1,0 +1,21 @@
+{
+  "name": "alpha-oracle-client",
+  "version": "0.1.0",
+  "description": "TypeScript client for Alpha Oracle",
+  "main": "dist/client.js",
+  "types": "dist/client.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/client.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.95.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}

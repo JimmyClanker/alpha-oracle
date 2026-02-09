@@ -1,0 +1,23 @@
+{
+  "name": "alpha-oracle-client",
+  "version": "0.1.0",
+  "description": "TypeScript client for Alpha Oracle - Verifiable on-chain trading signals",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "oracle": "tsx src/oracle-agent.ts",
+    "verify": "tsx src/verifier.ts",
+    "init": "tsx src/init-oracle.ts",
+    "leaderboard": "tsx src/leaderboard.ts",
+    "demo": "tsx src/demo.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.0",
+    "@solana/web3.js": "^1.98.0",
+    "@pythnetwork/price-service-client": "^1.9.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

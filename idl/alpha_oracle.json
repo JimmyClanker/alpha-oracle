@@ -1,0 +1,543 @@
+{
+  "address": "BkQs8LxquVLUXHq44nQwpaenQzyZMBksrpVz2YN28MjV",
+  "metadata": {
+    "name": "alpha_oracle",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Verifiable on-chain trading signals"
+  },
+  "instructions": [
+    {
+      "name": "create_prediction",
+      "docs": [
+        "Create a new prediction"
+      ],
+      "discriminator": [
+        186,
+        30,
+        192,
+        149,
+        194,
+        124,
+        119,
+        37
+      ],
+      "accounts": [
+        {
+          "name": "oracle",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  111,
+                  114,
+                  97,
+                  99,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "prediction",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  101,
+                  100,
+                  105,
+                  99,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "oracle"
+              },
+              {
+                "kind": "account",
+                "path": "oracle.total_predictions",
+                "account": "Oracle"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "asset",
+          "type": "string"
+        },
+        {
+          "name": "direction",
+          "type": {
+            "defined": {
+              "name": "Direction"
+            }
+          }
+        },
+        {
+          "name": "entry_price",
+          "type": "u64"
+        },
+        {
+          "name": "take_profit",
+          "type": "u64"
+        },
+        {
+          "name": "stop_loss",
+          "type": "u64"
+        },
+        {
+          "name": "timeframe_hours",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "initialize_oracle",
+      "docs": [
+        "Initialize a new oracle (one-time setup)"
+      ],
+      "discriminator": [
+        144,
+        223,
+        131,
+        120,
+        196,
+        253,
+        181,
+        99
+      ],
+      "accounts": [
+        {
+          "name": "oracle",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  111,
+                  114,
+                  97,
+                  99,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "verify_prediction",
+      "docs": [
+        "Verify a prediction result (can be called by anyone after expiry)"
+      ],
+      "discriminator": [
+        18,
+        254,
+        78,
+        176,
+        125,
+        100,
+        18,
+        100
+      ],
+      "accounts": [
+        {
+          "name": "oracle",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  111,
+                  114,
+                  97,
+                  99,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "oracle.authority",
+                "account": "Oracle"
+              }
+            ]
+          }
+        },
+        {
+          "name": "prediction",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  101,
+                  100,
+                  105,
+                  99,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "oracle"
+              },
+              {
+                "kind": "account",
+                "path": "prediction.prediction_id",
+                "account": "Prediction"
+              }
+            ]
+          }
+        },
+        {
+          "name": "verifier",
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "result_price",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Oracle",
+      "discriminator": [
+        139,
+        194,
+        131,
+        179,
+        140,
+        179,
+        229,
+        244
+      ]
+    },
+    {
+      "name": "Prediction",
+      "discriminator": [
+        98,
+        127,
+        141,
+        187,
+        218,
+        33,
+        8,
+        14
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "PredictionCreated",
+      "discriminator": [
+        132,
+        136,
+        244,
+        237,
+        14,
+        12,
+        159,
+        159
+      ]
+    },
+    {
+      "name": "PredictionVerified",
+      "discriminator": [
+        166,
+        92,
+        17,
+        197,
+        106,
+        139,
+        188,
+        149
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "PredictionNotActive",
+      "msg": "Prediction is not active"
+    },
+    {
+      "code": 6001,
+      "name": "PredictionNotExpired",
+      "msg": "Prediction has not expired yet"
+    }
+  ],
+  "types": [
+    {
+      "name": "Direction",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Long"
+          },
+          {
+            "name": "Short"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Oracle",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "total_predictions",
+            "type": "u64"
+          },
+          {
+            "name": "wins",
+            "type": "u64"
+          },
+          {
+            "name": "losses",
+            "type": "u64"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prediction",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "prediction_id",
+            "type": "u64"
+          },
+          {
+            "name": "asset",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "type": {
+              "defined": {
+                "name": "Direction"
+              }
+            }
+          },
+          {
+            "name": "entry_price",
+            "type": "u64"
+          },
+          {
+            "name": "take_profit",
+            "type": "u64"
+          },
+          {
+            "name": "stop_loss",
+            "type": "u64"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PredictionStatus"
+              }
+            }
+          },
+          {
+            "name": "result_price",
+            "type": "u64"
+          },
+          {
+            "name": "verified_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PredictionCreated",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "prediction_id",
+            "type": "u64"
+          },
+          {
+            "name": "asset",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "type": {
+              "defined": {
+                "name": "Direction"
+              }
+            }
+          },
+          {
+            "name": "entry_price",
+            "type": "u64"
+          },
+          {
+            "name": "take_profit",
+            "type": "u64"
+          },
+          {
+            "name": "stop_loss",
+            "type": "u64"
+          },
+          {
+            "name": "expires_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PredictionStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Active"
+          },
+          {
+            "name": "Won"
+          },
+          {
+            "name": "Lost"
+          },
+          {
+            "name": "Expired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PredictionVerified",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "oracle",
+            "type": "pubkey"
+          },
+          {
+            "name": "prediction_id",
+            "type": "u64"
+          },
+          {
+            "name": "result_price",
+            "type": "u64"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PredictionStatus"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
