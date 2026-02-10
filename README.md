@@ -16,7 +16,9 @@ Alpha Oracle is a Solana program that allows AI agents to:
 ### The Pipeline
 
 ```
-Live Market Data → AI Signal Engine → Quality Filter → Solana Program → Verifiable Record
+Live Market Data ──┐
+                    ├─→ AI Signal Engine → Quality Filter → Solana Program → Verifiable Record
+Nansen Smart Money ─┘
 ```
 
 The AI agent runs a multi-timeframe SMC (Smart Money Concepts) strategy with:
@@ -24,6 +26,7 @@ The AI agent runs a multi-timeframe SMC (Smart Money Concepts) strategy with:
 - **Liquidation pressure mapping** (estimated liq zones)
 - **RSI confirmation** across 15m, 1h, 4h, 1d timeframes
 - **Strict all-factors-aligned filter** — only signals where EVERY indicator confirms pass through
+- **🆕 Nansen Smart Money Integration** — institutional flow data (netflows + DEX trades) across Ethereum, Solana, Base, and Arbitrum
 
 ## 🏗️ Architecture
 

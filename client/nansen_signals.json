@@ -1,0 +1,240 @@
+{
+  "timestamp": "2026-02-10T13:12:53.276062+00:00",
+  "source": "nansen_smart_money",
+  "chains_scanned": [
+    "ethereum",
+    "solana",
+    "base",
+    "arbitrum"
+  ],
+  "signals": [
+    {
+      "symbol": "ZAUTH",
+      "chain": "solana",
+      "direction": "SHORT",
+      "confidence": 1.0,
+      "sources": [
+        "nansen_smart_money_dex"
+      ],
+      "net_flow_usd": -8797.94,
+      "timestamp": "2026-02-10T13:12:53.275887+00:00"
+    },
+    {
+      "symbol": "ETH",
+      "chain": "base",
+      "direction": "SHORT",
+      "confidence": 0.94,
+      "sources": [
+        "nansen_smart_money_dex"
+      ],
+      "net_flow_usd": -12913.08,
+      "timestamp": "2026-02-10T13:12:53.275938+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 ADHD",
+      "chain": "base",
+      "direction": "LONG",
+      "confidence": 0.8,
+      "sources": [
+        "nansen_smart_money_netflow",
+        "nansen_smart_money_dex"
+      ],
+      "net_flow_usd": 34020.270000000004,
+      "timestamp": "2026-02-10T13:12:53.274526+00:00"
+    },
+    {
+      "symbol": "WOJAK",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.8,
+      "sources": [
+        "nansen_smart_money_netflow",
+        "nansen_smart_money_dex"
+      ],
+      "net_flow_usd": 21377.16,
+      "timestamp": "2026-02-10T13:12:53.274250+00:00"
+    },
+    {
+      "symbol": "BP",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.6000000000000001,
+      "sources": [
+        "nansen_smart_money_netflow",
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 5507.1900000000005,
+      "timestamp": "2026-02-10T13:12:53.274304+00:00"
+    },
+    {
+      "symbol": "MRDN",
+      "chain": "base",
+      "direction": "LONG",
+      "confidence": 0.6,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 6556.36,
+      "timestamp": "2026-02-10T13:12:53.274544+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 TORTOISE",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 14135.25,
+      "timestamp": "2026-02-10T13:12:53.274239+00:00"
+    },
+    {
+      "symbol": "TIBBIR",
+      "chain": "base",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 12285.02,
+      "timestamp": "2026-02-10T13:12:53.274535+00:00"
+    },
+    {
+      "symbol": "SINCLAIR",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 8210.76,
+      "timestamp": "2026-02-10T13:12:53.274259+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 ROCK",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 4319.11,
+      "timestamp": "2026-02-10T13:12:53.274278+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 GROYPER",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 3680.73,
+      "timestamp": "2026-02-10T13:12:53.274296+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 CLAWRA",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 3342.9,
+      "timestamp": "2026-02-10T13:12:53.274332+00:00"
+    },
+    {
+      "symbol": "ACCELERANDO",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 1730.98,
+      "timestamp": "2026-02-10T13:12:53.274370+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 AIMS",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 1606.01,
+      "timestamp": "2026-02-10T13:12:53.274379+00:00"
+    },
+    {
+      "symbol": "FRAMEMOG",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 1034.43,
+      "timestamp": "2026-02-10T13:12:53.274404+00:00"
+    },
+    {
+      "symbol": "CATBUS",
+      "chain": "base",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 1006.1,
+      "timestamp": "2026-02-10T13:12:53.274561+00:00"
+    },
+    {
+      "symbol": "HORSE",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 831.94,
+      "timestamp": "2026-02-10T13:12:53.274456+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 WORDSLOP",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 780.42,
+      "timestamp": "2026-02-10T13:12:53.274466+00:00"
+    },
+    {
+      "symbol": "\ud83c\udf31 HYPERFOMO",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 665.99,
+      "timestamp": "2026-02-10T13:12:53.274475+00:00"
+    },
+    {
+      "symbol": "DEX",
+      "chain": "solana",
+      "direction": "LONG",
+      "confidence": 0.5,
+      "sources": [
+        "nansen_smart_money_netflow"
+      ],
+      "net_flow_usd": 526.5,
+      "timestamp": "2026-02-10T13:12:53.274507+00:00"
+    }
+  ],
+  "raw_stats": {
+    "netflow_signals": 37,
+    "dex_signals": 5,
+    "merged_total": 38
+  }
+}
